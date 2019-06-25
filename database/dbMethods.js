@@ -1,7 +1,7 @@
 let UserModel = require("./db.js");
 
 let addNutrition = function(user, document, callback) {
-  //store old data in memory
+  //store old data in memory and add new data to it
   let totalNutrition = {};
   let previousItems = [];
   if (document) {
@@ -23,11 +23,9 @@ let addNutrition = function(user, document, callback) {
   UserModel.deleteOne({
     user: user.name
   })
-    .then(() => {
-      console.log("removed old user");
-    })
-    .catch(() => {
-      console.log("error removing old user");
+    .then(() => {})
+    .catch(err => {
+      console.log("error removing old user", err);
     });
   //add new collection to db
   UserModel({
@@ -37,7 +35,6 @@ let addNutrition = function(user, document, callback) {
   })
     .save()
     .then(() => {
-      console.log("user saved");
       callback(null, "success");
     })
     .catch(err => {
@@ -62,7 +59,6 @@ let updateNutrition = function(user, callback) {
   getTotalNutrition(user, (err, document) => {
     if (err) console.log("error getting document", err);
     else {
-      console.log("found the old document");
       addNutrition(user, document, callback);
     }
   });

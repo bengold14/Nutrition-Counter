@@ -5,7 +5,7 @@ import Search from "./search.jsx";
 import Results from "./listResults.jsx";
 import TotalNutrition from "./totalNutrition.jsx";
 import PreviouslyEaten from "./previouslyEaten.jsx";
-const server = process.env.server || "http://localhost:3000/";
+const server = process.env.server || "http://3.15.28.216:3000/";
 
 class App extends React.Component {
   constructor(props) {

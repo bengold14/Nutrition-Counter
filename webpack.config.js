@@ -2,8 +2,7 @@ const path = require("path");
 
 module.exports = {
   entry: "./client/src/App.jsx",
-  mode: "development",
-  devtool: "inline-source-map",
+  mode: "production",
   output: {
     path: __dirname + "/client/dist",
     filename: "app.js"
