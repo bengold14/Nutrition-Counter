@@ -6,7 +6,7 @@ const axios = require("axios");
 const database = require("../database/dbMethods.js");
 const app = express();
 const PORT = process.env.port || 3000;
-const KEY = process.env.key || require("../keys.js").USDAkey;
+const KEY = process.env.key || require("../keys.js").USDAkey; //sign up for key @ https://ndb.nal.usda.gov/ndb/doc/index#
 
 app.use(express.static(path.join(__dirname, "../client/dist")));
 app.use(morgan());
