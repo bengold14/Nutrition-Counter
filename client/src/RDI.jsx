@@ -16,6 +16,7 @@ export default {
   "Magnesium, Mg": { value: 400, unit: "mg" },
   "Phosphorus, P": { value: 1000, unit: "mg" },
   "Potassium, K": { value: 3500, unit: "mg" },
+  "Vitamin K (phylloquinone)": { value: 125, unit: "µg" },
   "Zinc, Zn": { value: 15, unit: "mg" },
   Thiamin: { value: 1.5, unit: "mg" },
   Riboflavin: { value: 1.7, unit: "mg" },
