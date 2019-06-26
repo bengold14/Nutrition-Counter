@@ -11,10 +11,11 @@ let addNutrition = function(user, document, callback) {
   previousItems.push(user.food.desc.name);
   user.food.nutrients.forEach(nutrient => {
     if (totalNutrition[nutrient.name]) {
-      //need to check units here "unit":"kcal","value":"500"
-      totalNutrition[nutrient.name].value = JSON.stringify(
-        Number(nutrient.value) + Number(totalNutrition[nutrient.name].value)
-      );
+      if (totalNutrition[nutrient.name].unit === nutrient.unit) {
+        totalNutrition[nutrient.name].value = JSON.stringify(
+          Number(nutrient.value) + Number(totalNutrition[nutrient.name].value)
+        );
+      }
     } else {
       totalNutrition[nutrient.name] = nutrient;
     }

@@ -27,6 +27,22 @@ app.get("/search", (req, res) => {
     });
 });
 
+app.get("/food", (req, res) => {
+  axios
+    .get(
+      `https://api.nal.usda.gov/ndb/V2/reports?ndbno=${JSON.parse(
+        req.query.ndbno
+      )}&type=b&format=json&api_key=${KEY}`
+    )
+    .then(({ data }) => {
+      let food = data.foods[0].food;
+      res.send(food);
+    })
+    .catch(err => {
+      console.log("error getting food nutrition data back from usda", err);
+    });
+});
+
 app.get("/nutrition", (req, res) => {
   database.getTotalNutrition({ name: "ben" }, (err, data) => {
     if (err) {
@@ -46,6 +62,7 @@ app.post("/nutrition", (req, res) => {
     )
     .then(({ data }) => {
       let food = data.foods[0].food;
+      console.log(food);
       database.updateNutrition({ name: "ben", food: food }, (err, success) => {
         if (err) {
           res.sendStatus("500");

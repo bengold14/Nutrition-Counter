@@ -1,6 +1,7 @@
-.app {
+.page {
   height: 100%;
   width: 100%;
+  background-image: url("./105099394-balanced-diet-food-background-organic-food-for-healthy-nutrition-superfoods-meat-fish-legumes-nuts-s.jpg");
 }
 
 .profile-container {
@@ -14,8 +15,8 @@
     ".      header  .      sidebar    ."
     ".      .       .      sidebar    ."
     ".      main    .      sidebar    ."
-    ".      .       .      .          ."
-    ".      footer  footer footer     ."
+    ".      .       .      sidebar          ."
+    ".      footer  .      sidebar     ."
     ".      .       .      .          .";
 }
 
@@ -27,19 +28,24 @@
 }
 
 .header-title {
-  font-size: 24pt;
+  font-size: 36pt;
   width: 100%;
   height: 50%;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .search-container {
-  width: 100%;
+  width: 95%;
+  margin-right: 5%;
   height: 50%;
   box-shadow: 2px 2px grey;
   border: 1px solid black;
 }
 
 .search-bar {
+  background: rgb(229, 245, 250, 0.7);
   box-sizing: border-box;
   width: 80%;
   height: 100%;
@@ -78,47 +84,86 @@
 }
 
 .main {
-  background-color: lightgrey;
+  background: rgb(229, 245, 250, 0.7);
   border-radius: 6px;
   grid-area: main;
   height: auto;
   width: auto;
+  padding: 2vh;
 }
 
-.results-title {
-  font-size: 18pt;
-  margin: 1vh;
-}
-
-.results-container {
+.list-container {
   padding-bottom: 2vh;
 }
 
-.results-box {
-  height: 35vh;
+.list-title {
+  font-size: 18pt;
+}
+
+.list-box {
+  height: 30vh;
   overflow: scroll;
 }
 
-.result {
-  margin: 1vh;
+.list {
+  margin-bottom: 1vh;
   padding: 1vh;
   font-size: 12pt;
   background-color: white;
   border-radius: 2px;
 }
 
-.result:hover {
+.list:hover {
   background-color: rgb(229, 245, 250, 0.9);
   cursor: pointer;
 }
 
-.result:active {
+.list:active {
   background-color: rgba(163, 163, 163, 0.9);
   transition: 0.25s;
 }
 
+.featured-container {
+  padding-bottom: 2vh;
+}
+
+.featured-title {
+  font-size: 18pt;
+}
+
+.featured-box {
+  height: 30vh;
+  overflow: scroll;
+  background: white;
+}
+
+.featured-name {
+  font-size: 14pt;
+}
+
+.featured-manu {
+  float: right;
+  font-size: 14pt;
+}
+
+.featured-nutrient-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.featured-nutrient {
+  background-color: lightgreen;
+  padding: 1vh;
+  margin: 1vh;
+}
+
+.featured-nutrient-name {
+  padding-right: 1vh;
+}
+
 .sidebar {
-  background-color: lightgrey;
+  background: rgb(229, 245, 250, 0.7);
   border-radius: 6px;
   grid-area: sidebar;
   height: auto;
@@ -135,21 +180,43 @@
 }
 
 .nutrients-container {
-  height: 55vh;
+  height: 80vh;
   overflow: scroll;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  margin-bottom: 2vh;
 }
 
 .nutrient {
-  background-color: white;
+  background: rgba(57, 245, 142, 0.5);
   border-radius: 2px;
-  margin: 1vh;
-  padding: 1vh;
+  margin: 0.5vh;
+  padding: 0.5vh;
+}
+
+.nutrient-bar-under {
+  height: 2.5vh;
+  background-color: blue;
+}
+
+.nutrient-bar-at {
+  height: 2.5vh;
+  background-color: green;
+}
+
+.nutrient-bar-over {
+  height: 2.5vh;
+  background-color: red;
 }
 
 .nutrient-name {
-  font-size: 16pt;
-  margin-bottom: 1vh;
+  font-size: 12pt;
+  margin-bottom: 0.25vh;
   color: green;
+}
+
+.nutrient-value {
+  float: left;
 }
 
 .nutrient-unit {
@@ -157,7 +224,7 @@
 }
 
 .footer {
-  background-color: lightgrey;
+  background: rgb(229, 245, 250, 0.7);
   border-radius: 6px;
   grid-area: footer;
   height: auto;
@@ -178,15 +245,14 @@
   box-sizing: border-box;
   height: 60%;
   width: auto;
-  margin-left: 1vh;
-  margin-right: 1vh;
+  margin-left: 2vh;
+  margin-right: 2vh;
   display: flex;
   flex-direction: row-reverse;
-  padding: 1vh;
 }
 
 .food-container {
-  padding: 2vh;
+  padding: 1.5vh;
   margin-left: 1vh;
   margin-right: 1vh;
   flex-grow: 2;
@@ -196,6 +262,10 @@
 .food-container:hover {
   cursor: pointer;
   background-color: rgb(229, 245, 250, 0.9);
+}
+
+.food-box {
+  box-sizing: border-box;
 }
 
 .entries-button {

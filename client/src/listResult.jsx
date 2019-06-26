@@ -1,6 +1,4 @@
 import React from "react";
-import axios from "axios";
-const server = process.env.server || "http://3.15.28.216:3000/";
 
 class ListResults extends React.Component {
   constructor(props) {
@@ -10,26 +8,18 @@ class ListResults extends React.Component {
   }
 
   onClick(e) {
-    axios
-      .post(`${server}nutrition`, { ndbno: JSON.stringify(e.target.id) })
-      .then(() => {
-        console.log("posted successfully to database");
-        this.props.updateNutrition();
-      })
-      .catch(err => {
-        if (err) console.log("error posting to the database ", err);
-      });
+    this.props.updateFood(e.target.id);
   }
 
   render() {
     return (
-      <div className="results-container">
-        <div className="results-title">Results</div>
-        <div className="results-box">
+      <div className="list-container">
+        <div className="list-title">Results</div>
+        <div className="list-box">
           {this.props.itemList.list.item.map((item, index) => {
             return (
               <div
-                className="result"
+                className="list"
                 onClick={this.onClick}
                 key={index}
                 id={item.ndbno}
