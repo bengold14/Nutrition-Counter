@@ -6,7 +6,7 @@ import ListResult from "./listResult.jsx";
 import FoodResult from "./featuredResult.jsx";
 import TotalNutrition from "./totalNutrition.jsx";
 import PreviouslyEaten from "./previouslyEaten.jsx";
-const server = process.env.server || "http://localhost:3000/"; // change to deployed location or local host
+const server = process.env.server || "http://3.15.28.216:3000/"; // change to deployed location or local host
 
 class App extends React.Component {
   constructor(props) {

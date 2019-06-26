@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-const server = process.env.server || "http://localhost:3000/";
+const server = process.env.server || "http://3.15.28.216:3000/";
 
 class FoodResult extends React.Component {
   constructor(props) {
