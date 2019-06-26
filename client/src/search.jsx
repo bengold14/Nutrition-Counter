@@ -4,11 +4,12 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchTerm: "Enter Food"
+      searchTerm: "Search food database"
     };
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.clear = this.clear.bind(this);
   }
 
   onChange(e) {
@@ -21,10 +22,21 @@ class Search extends React.Component {
     this.props.submitData(this.state.searchTerm);
   }
 
+  clear() {
+    this.setState({
+      searchTerm: ""
+    });
+  }
+
   render() {
     return (
       <div className="search-container">
-        <input className="search-bar" onChange={this.onChange} />
+        <input
+          className="search-bar"
+          onClick={this.clear}
+          onChange={this.onChange}
+          value={this.state.searchTerm}
+        />
         <button className="search-submit" onClick={this.onSubmit}>
           Submit
         </button>

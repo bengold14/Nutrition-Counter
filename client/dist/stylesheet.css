@@ -29,9 +29,9 @@
 
 .header-title {
   font-size: 36pt;
-  margin-left: 30%;
-  width: 40%;
-  margin-right: 30%;
+  margin-left: 25%;
+  width: 50%;
+  margin-right: 25%;
   margin-bottom: 2%;
   height: 50%;
   color: white;
@@ -59,6 +59,7 @@
   border: 0;
   font-size: 20pt;
   padding-left: 2vh;
+  color: grey;
 }
 
 .search-bar:focus {
@@ -191,21 +192,27 @@
 }
 
 .featured-add-button {
-  width: 12vh;
+  width: 5vw;
+  border: 1px grey solid;
+  background-color: white;
+  border-radius: 4px;
   height: 8vh;
 }
 .featured-back-button {
-  width: 12vh;
+  width: 5vw;
+  border: 1px grey solid;
+  background-color: white;
+  border-radius: 4px;
   height: 8vh;
 }
 
 .featured-add-button:hover {
   cursor: pointer;
-  background-color: rgb(229, 245, 250, 0.7);
+  background-color: rgb(229, 245, 250, 0.4);
 }
 .featured-back-button:hover {
   cursor: pointer;
-  background-color: rgb(229, 245, 250, 0.7);
+  background-color: rgb(229, 245, 250, 0.4);
 }
 
 .sidebar {
@@ -322,10 +329,17 @@
 
 .entries-button {
   width: 5vw;
-  border: 1px lightgrey solid;
+  border: 1px grey solid;
+  background-color: white;
+  border-radius: 4px;
 }
 
 .entries-button:hover {
   cursor: pointer;
-  background-color: rgb(229, 245, 250, 0.9);
+  background-color: rgb(229, 245, 250, 0.7);
+}
+
+.entries-button:active {
+  cursor: pointer;
+  background-color: grey;
 }
