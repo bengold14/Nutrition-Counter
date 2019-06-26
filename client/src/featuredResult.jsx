@@ -35,41 +35,54 @@ class FoodResult extends React.Component {
     return (
       <div className="featured-container">
         <div className="featured-title">Food</div>
-        {this.state.added ? (
-          "successfully added!"
-        ) : (
-          <div className="featured-box">
-            <span className="featured-name">
-              {this.props.food.desc.name
-                .split(" ")
-                .splice(0, 2)
-                .join(" ")}
-              }
-            </span>
-            <span className="featured-manu">{this.props.food.desc.manu}</span>
-            <div className="featured-nutrient-box">
-              {this.props.food.nutrients.map((nutrient, index) => {
-                return (
-                  <div className="featured-nutrient" key={index}>
-                    <span className="featured-nutrient-name">
-                      {nutrient.name}
-                    </span>
-                    <span className="featured-nutrient-value">
-                      {nutrient.value}
-                    </span>
-                    <span className="featured-nutrient-unit">
-                      {nutrient.unit}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
-            <button onClick={this.addFood} id={this.props.food.desc.ndbno}>
+        <div className="featured-box">
+          <span className="featured-name">
+            {this.props.food.desc.name
+              .split(" ")
+              .splice(0, 4)
+              .join(" ")}
+            }
+          </span>
+          <span className="featured-manu">
+            {" "}
+            Made by: {this.props.food.desc.manu}
+          </span>
+          <div className="featured-nutrient-box">
+            {this.props.food.nutrients.map((nutrient, index) => {
+              return (
+                <div className="featured-nutrient" key={index}>
+                  <span className="featured-nutrient-name">
+                    {nutrient.name}
+                  </span>
+                  <span className="featured-nutrient-value">
+                    {nutrient.value}
+                  </span>
+                  <span className="featured-nutrient-unit">
+                    {nutrient.unit}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <span className="featured-back-button-container">
+          <button onClick={this.reset} className="featured-back-button">
+            Back
+          </button>
+        </span>
+        <span className="featured-add-button-container">
+          {this.state.added ? (
+            "successfully added!"
+          ) : (
+            <button
+              className="featured-add-button"
+              onClick={this.addFood}
+              id={this.props.food.desc.ndbno}
+            >
               Add Food!
             </button>
-          </div>
-        )}
-        <button onClick={this.reset}>Back</button>
+          )}
+        </span>
       </div>
     );
   }

@@ -25,13 +25,13 @@ let TotalNutrition = function(props) {
                         {Number(nutrient.value).toFixed(2)} {nutrient.unit}
                       </span>
                       <div
-                        className="nutrient-bar-over"
+                        className="nutrient-bar-at"
                         style={{
                           width: "100%"
                         }}
                       />
                     </div>
-                  ) : nutrientPercent > 0.8 ? (
+                  ) : nutrientPercent > 0.95 ? (
                     <div>
                       <span className="nutrient-value">
                         {Number(nutrient.value).toFixed(2)} {nutrient.unit}
