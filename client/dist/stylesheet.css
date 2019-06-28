@@ -2,6 +2,8 @@
   height: 140%;
   width: 100%;
   background-image: url("./105099394-balanced-diet-food-background-organic-food-for-healthy-nutrition-superfoods-meat-fish-legumes-nuts-s.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .profile-container {
