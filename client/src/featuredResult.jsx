@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-const server = process.env.server || "http://3.15.28.216:3000/";
+const server = process.env.server || "http://127.0.0.1:3000/"; //update to localhost or deployed instance
 
 class FoodResult extends React.Component {
   constructor(props) {
@@ -14,7 +14,10 @@ class FoodResult extends React.Component {
 
   addFood(e) {
     axios
-      .post(`${server}nutrition`, { ndbno: JSON.stringify(e.target.id) })
+      .post(`${server}nutrition`, {
+        ndbno: JSON.stringify(e.target.id),
+        uuid: this.props.uuid
+      })
       .then(() => {
         this.props.updateNutrition();
         this.setState({

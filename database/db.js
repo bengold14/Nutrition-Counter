@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const DatabaseIP = process.env.DatabaseIP;
+const DatabaseIP = process.env.DatabaseIP || "127.0.0.1";
 
 mongoose
   .connect(`mongodb://${DatabaseIP}/nutrition`, { useNewUrlParser: true })

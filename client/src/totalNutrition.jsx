@@ -1,5 +1,5 @@
 import React from "react";
-import rdi from "./RDI.jsx";
+import rdi from "./RDI.js";
 
 let TotalNutrition = function(props) {
   return (
