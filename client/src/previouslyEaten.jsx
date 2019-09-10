@@ -12,7 +12,6 @@ class PreviouslyEaten extends React.Component {
   }
 
   componentDidMount() {
-    //not rerendering when new props received
     if (this.props.nutrition.previousItems) {
       this.setState({
         pageEnd: JSON.parse(this.props.nutrition.previousItems).length

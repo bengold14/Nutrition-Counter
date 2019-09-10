@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
+const DatabaseIP = process.env.DatabaseIP;
 
 mongoose
-  .connect("mongodb://127.0.0.1/nutrition", { useNewUrlParser: true })
+  .connect(`mongodb://${DatabaseIP}/nutrition`, { useNewUrlParser: true })
   .then(() => {
-    console.log("connected to the database");
+    console.log("connected to the database", DatabaseIP);
   })
   .catch(err => {
     console.log("error connecting to the nutrition database ", err);

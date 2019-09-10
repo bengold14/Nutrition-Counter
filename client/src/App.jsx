@@ -6,7 +6,7 @@ import ListResult from "./listResult.jsx";
 import FoodResult from "./featuredResult.jsx";
 import TotalNutrition from "./totalNutrition.jsx";
 import PreviouslyEaten from "./previouslyEaten.jsx";
-const server = process.env.server || "http://3.15.28.216:3000/"; // change to deployed location or local host
+const server = process.env.server || "http://18.221.229.238:3000/"; // change to deployed location or local host
 
 class App extends React.Component {
   constructor(props) {
@@ -38,7 +38,6 @@ class App extends React.Component {
         params: { searchTerm: searchTerm }
       })
       .then(({ data }) => {
-        console.log("got food list from usda", data.list.item[0].name);
         this.setState({
           itemList: data
         });
@@ -52,7 +51,6 @@ class App extends React.Component {
     axios
       .get(`${server}nutrition/`)
       .then(({ data }) => {
-        console.log("got nutrition data back from server");
         this.setState({
           currentNutrition: data
         });
@@ -68,7 +66,6 @@ class App extends React.Component {
         params: { ndbno: ndbno }
       })
       .then(({ data }) => {
-        console.log("got food data back from server", data);
         this.setState({
           food: data,
           results: false

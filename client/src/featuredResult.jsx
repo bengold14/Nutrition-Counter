@@ -16,7 +16,6 @@ class FoodResult extends React.Component {
     axios
       .post(`${server}nutrition`, { ndbno: JSON.stringify(e.target.id) })
       .then(() => {
-        console.log("posted successfully to database");
         this.props.updateNutrition();
         this.setState({
           added: true
