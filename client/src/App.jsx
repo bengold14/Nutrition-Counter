@@ -9,7 +9,7 @@ import FoodResult from "./featuredResult.jsx";
 import TotalNutrition from "./totalNutrition.jsx";
 import PreviouslyEaten from "./previouslyEaten.jsx";
 
-const server = process.env.server || "http://127.0.0.1:3000/"; // change to deployed location or local host
+const server = process.env.server || "http://18.221.229.238:3000/"; // change to deployed location or local host
 
 class App extends React.Component {
   constructor(props) {
