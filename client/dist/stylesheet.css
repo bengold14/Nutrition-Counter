@@ -13,7 +13,7 @@
   grid-template-columns: 3vw auto 3vw 20% 3vw;
   grid-template-rows: 3vw 15% 3vw auto 3vw 20% 3vw;
   grid-template-areas:
-    ".      .       .      .          ."
+    "test      .       .      .          ."
     ".      header  .      sidebar    ."
     ".      .       .      sidebar    ."
     ".      main    .      sidebar    ."

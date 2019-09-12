@@ -3,13 +3,35 @@ import ReactDOM from "react-dom";
 import axios from "axios";
 import uuid from "uuid";
 
+import Styled from "styled-components";
+
 import Search from "./search.jsx";
 import ListResult from "./listResult.jsx";
 import FoodResult from "./featuredResult.jsx";
 import TotalNutrition from "./totalNutrition.jsx";
 import PreviouslyEaten from "./previouslyEaten.jsx";
 
-const server = process.env.server || "http://18.221.229.238:3000/"; // change to deployed location or local host
+const server = process.env.server || "http://127.0.0.1:3000/"; // change to deployed location or local host
+
+const GridContainer = Styled.div`
+background: rgb(229, 245, 250, 0.7);
+border-radius: 6px;
+grid-area: ${props => props.gridArea};
+height: auto;
+width: auto;
+padding: 2vh;
+`;
+
+const HeaderTitle = Styled.div`  
+font-size: 36pt;
+margin-left: 25%;
+width: 50%;
+margin-right: 25%;
+margin-bottom: 2%;
+height: 50%;
+color: white;
+text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+font-weight: bold;`;
 
 class App extends React.Component {
   constructor(props) {
@@ -43,17 +65,14 @@ class App extends React.Component {
         params: { searchTerm: searchTerm, uuid: this.state.uuid }
       })
       .then(({ data }) => {
-        if (data.errors) {
-          console.log("search error", data.errors);
-        } else {
+        if (data.errors) console.log("search error", data.errors);
+        else {
           this.setState({
             itemList: data
           });
         }
       })
-      .catch(err => {
-        if (err) console.log("error getting food results from usda", err);
-      });
+      .catch(err => console.log("error getting food results from usda", err));
   }
 
   updateNutrition() {
@@ -102,10 +121,10 @@ class App extends React.Component {
       <div className="page">
         <div className="profile-container">
           <div className="header">
-            <div className="header-title">Nutrition Profile</div>
+            <HeaderTitle>Nutrition Profile</HeaderTitle>
             <Search submitData={this.onSubmit} uuid={this.state.uuid} />
           </div>
-          <div className="main">
+          <GridContainer gridArea={"main"}>
             {this.state.results ? (
               <ListResult
                 itemList={this.state.itemList}
@@ -120,20 +139,20 @@ class App extends React.Component {
                 uuid={this.state.uuid}
               />
             )}
-          </div>
-          <div className="sidebar">
+          </GridContainer>
+          <GridContainer gridArea={"sidebar"}>
             <TotalNutrition
               nutrition={this.state.currentNutrition}
               uuid={this.state.uuid}
             />
-          </div>
-          <div className="footer">
+          </GridContainer>
+          <GridContainer gridArea={"footer"}>
             <PreviouslyEaten
               nutrition={this.state.currentNutrition}
               updateFood={this.updateFood}
               uuid={this.state.uuid}
             />
-          </div>
+          </GridContainer>
         </div>
       </div>
     );
